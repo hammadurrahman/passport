@@ -66,7 +66,7 @@ Route::middleware(['web', $guard ? 'auth:'.$guard : 'auth'])->group(function () 
         'uses' => 'ScopeController@all',
         'as' => 'scopes.index',
     ]);
-
+    'uses' => 'AccessTokenController@issueToken',
     Route::get('/personal-access-tokens', [
         'uses' => 'PersonalAccessTokenController@forUser',
         'as' => 'personal.tokens.index',
